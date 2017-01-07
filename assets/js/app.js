@@ -1,23 +1,32 @@
-var React    = window.React = require('react'), // assign it to window for react chrome extension
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-    Header   = require('./header'),
-    Posts    = require('./posts'),
+window.React = React;
+
+var Header = require('./header'),
+    Posts = require('./posts'),
 
     App;
 
+
+
 App = React.createClass({
-    render: function () {
-        return <div>
-            <Header/>
-            <div className="container content">
-                <Posts/>
-            </div>
-        </div>;
+    render: function() {
+        return <div >
+            <
+            Header / >
+            <
+            div className = "container content" >
+            <
+            Posts / >
+            <
+            /div> < /
+            div > ;
     }
 });
 
-App.start = function () {
-    React.render(<App/>, document.getElementById('app'));
+App.start = function() {
+    ReactDOM.render( < App / > , document.getElementById('app'));
 };
 
 module.exports = window.App = App;

@@ -1,7 +1,7 @@
 {
   "name": "hn-react",
   "version": "0.0.0",
-  "description": "",
+  "description": "This is a port of the Hacker News Client writter in AngularJS. [https://coderwall.com/p/0pfmvq](https://coderwall.com/p/0pfmvq). Source code of the angular port can be found at [https://github.com/codealpha/hn-angular](https://github.com/codealpha/hn-angular).",
   "main": "index.js",
   "scripts": {
     "test": "jest"
@@ -15,12 +15,28 @@
   },
   "license": "ISC",
   "devDependencies": {
+    "@extjs/reactor-babel-plugin": "^0.2.0",
+    "@extjs/reactor-webpack-plugin": "^0.2.4",
     "babelify": "^6.1.2",
-    "gulp": "~3.8.9",
-    "gulp-browserify": "~0.5.0",
-    "gulp-concat": "~2.4.1",
-    "gulp-imagemin": "~1.2.1",
-    "jquery": "~2.1.1",
-    "react": "^0.12.0"
-  }
+    "gulp": "^3.8.9",
+    "gulp-browserify": "^0.5.0",
+    "gulp-concat": "^2.4.1",
+    "gulp-imagemin": "^1.2.1",
+    "jquery": "^2.1.1",
+    "react": "^15.4.2"
+  },
+  "dependencies": {
+    "@extjs/reactor": "^0.2.5",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "webpack": "^1.14.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prabirshrestha/hn-react.git"
+  },
+  "bugs": {
+    "url": "https://github.com/prabirshrestha/hn-react/issues"
+  },
+  "homepage": "https://github.com/prabirshrestha/hn-react#readme"
 }
