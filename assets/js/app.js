@@ -1,14 +1,6 @@
-
 import React from 'react';
 import ReactDOM from 'react-dom';
 import styles from '../css/styles.css';
-
-//import { install } from '@extjs/reactor';
-//import { Grid } from '@extjs/reactor/modern';
-
-// Set up the Ext JS Reactor
-//install({ viewport: true });
-//install();
 
 window.React = React;
 
@@ -22,8 +14,7 @@ App = React.createClass({
             <Header / >
             <div className = "container content" >
             <Posts / >
-            </div >
-        </div > ;
+            </div > </div > ;
     }
 });
 

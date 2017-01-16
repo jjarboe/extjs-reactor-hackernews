@@ -4,8 +4,6 @@ const path = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-/*const ExtJSReactorWebpackPlugin = require('@extjs/reactor-webpack-plugin');*/
-
 module.exports = {
     devtool: 'cheap-module-eval-source-map',
 
@@ -23,15 +21,6 @@ module.exports = {
             "react-dom": path.resolve('./node_modules/react-dom')
         }
     },
-    /*
-        plugins: [
-            //new ExtJSReactorWebpackPlugin({
-            //  sdk: 'ext',
-            //    theme: 'theme-material',
-            //    packages: ['charts']
-            //})
-        ],
-    */
     module: {
         loaders: [{
                 test: /\.jsx?$/,
@@ -57,7 +46,6 @@ module.exports = {
 
     plugins: [
         new ExtractTextPlugin('styles.css')
-        //        "@extjs/reactor-babel-plugin"
     ],
 
     devServer: {

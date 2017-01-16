@@ -1,50 +1,47 @@
 {
-  "name": "hn-react",
-  "version": "0.0.0",
-  "description": "This is a port of the Hacker News Client writter in AngularJS. [https://coderwall.com/p/0pfmvq](https://coderwall.com/p/0pfmvq). Source code of the angular port can be found at [https://github.com/codealpha/hn-angular](https://github.com/codealpha/hn-angular).",
-  "main": "index.js",
-  "scripts": {
-    "test": "jest",
-    "start": "webpack-dev-server --progress --profile --colors --config webpack.config.dev.js",
-    "build": "npm run clean && webpack --config webpack.config.dev.js --progress --profile --colors",
-    "clean": "rimraf build"
-  },
-  "author": "",
-  "jest": {
-    "scriptPreprocessor": "preprocessor.js",
-    "unmockedModulePathPatterns": [
-      "node_modules/react"
-    ]
-  },
-  "license": "ISC",
-  "devDependencies": {
-    "@extjs/reactor-babel-plugin": "^0.2.0",
-    "@extjs/reactor-webpack-plugin": "^0.2.4",
-    "babel-loader": "^6.2.10",
-    "babelify": "^6.1.2",
-    "gulp": "^3.8.9",
-    "gulp-browserify": "^0.5.0",
-    "gulp-concat": "^2.4.1",
-    "gulp-imagemin": "^1.2.1",
-    "jquery": "^2.1.1",
-    "react": "^15.4.2"
-  },
-  "dependencies": {
-    "@extjs/reactor": "^0.2.5",
-    "babel-cli": "^6.18.0",
-    "babel-polyfill": "^6.20.0",
-    "copy-webpack-plugin": "^4.0.1",
-    "html-webpack-plugin": "^2.26.0",
-    "react": "^15.4.2",
-    "react-dom": "^15.4.2",
-    "webpack": "^1.14.0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/prabirshrestha/hn-react.git"
-  },
-  "bugs": {
-    "url": "https://github.com/prabirshrestha/hn-react/issues"
-  },
-  "homepage": "https://github.com/prabirshrestha/hn-react#readme"
+    "name": "hn-react",
+    "version": "0.0.0",
+    "description": "This is a port of the Hacker News Client writter in AngularJS. [https://coderwall.com/p/0pfmvq](https://coderwall.com/p/0pfmvq). Source code of the angular port can be found at [https://github.com/codealpha/hn-angular](https://github.com/codealpha/hn-angular).",
+    "main": "index.js",
+    "scripts": {
+        "test": "jest",
+        "start": "webpack-dev-server --progress --profile --colors --config webpack.config.dev.js",
+        "build": "npm run clean && webpack --config webpack.config.dev.js --progress --profile --colors",
+        "clean": "rimraf build"
+    },
+    "author": "",
+    "jest": {
+        "scriptPreprocessor": "preprocessor.js",
+        "unmockedModulePathPatterns": [
+            "node_modules/react"
+        ]
+    },
+    "license": "ISC",
+    "devDependencies": {
+        "babel-loader": "^6.2.10",
+        "babelify": "^6.1.2",
+        "gulp": "^3.8.9",
+        "gulp-browserify": "^0.5.0",
+        "gulp-concat": "^2.4.1",
+        "gulp-imagemin": "^1.2.1",
+        "jquery": "^2.1.1",
+        "react": "^15.4.2"
+    },
+    "dependencies": {
+        "babel-cli": "^6.18.0",
+        "babel-polyfill": "^6.20.0",
+        "copy-webpack-plugin": "^4.0.1",
+        "html-webpack-plugin": "^2.26.0",
+        "react": "^15.4.2",
+        "react-dom": "^15.4.2",
+        "webpack": "^1.14.0"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/prabirshrestha/hn-react.git"
+    },
+    "bugs": {
+        "url": "https://github.com/prabirshrestha/hn-react/issues"
+    },
+    "homepage": "https://github.com/prabirshrestha/hn-react#readme"
 }
