@@ -1,3 +1,7 @@
+//import { Grid } from '@extjs/reactor/modern';
+import { reactify } from '@extjs/reactor';
+const Grid = reactify('grid');
+
 var React = require('react'),
     $     = require('jquery'),
 
@@ -26,12 +30,23 @@ List = React.createClass({
         });
     },
     render: function () {
+        return <Grid
+                store={{
+                    fields: ['objectId'],
+                    data: this.state.posts
+                }}
+                columns={[
+                    { text: 'Id', dataIndex: 'objectId', flex: 1 },
+                ]}
+            />;
+    }
+});
+/*
         return <ol className="posts">
             {this.state.posts.map(function (post) {
                 return <Item key={post.objectID} post={post}/>
             })}
         </ol>;
-    }
-});
+*/
 
 module.exports = List;

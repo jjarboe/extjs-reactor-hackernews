@@ -3,16 +3,19 @@
 const path = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const ExtJSReactWebpackPlugin = require('@extjs/reactor-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     devtool: 'cheap-module-eval-source-map',
 
-    entry: [
-        path.resolve('assets/js/app')
-    ],
+    entry: {
+        app: ["./assets/js/app"]
+    },
 
     output: {
         path: 'build',
+        publicPath: "/",
         filename: 'index.js'
     },
 
@@ -26,7 +29,7 @@ module.exports = {
                 test: /\.jsx?$/,
                 loader: "babel",
                 exclude: /(node_modules|ext|extjs)/,
-                include: [path.join(__dirname, 'assets', 'js')]
+                include: ["./assets/js"]
             },
             {
                 test: /\.css$/,
@@ -35,17 +38,23 @@ module.exports = {
             {
                 test: /\.(ico|jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2)(\?.*)?$/,
                 exclude: /\/favicon.ico$/,
-                include: [path.join(__dirname, 'assets', 'img')],
-                loader: 'file',
-                query: {
-                    name: 'static/media/[name].[hash:8].[ext]'
-                }
+                include: ["./assets/img"],
+                loader: 'file'
             }
         ]
     },
 
     plugins: [
-        new ExtractTextPlugin('styles.css')
+        new ExtractTextPlugin('styles.css'),
+        new ExtJSReactWebpackPlugin({
+            sdk: 'ext',
+            toolkit: 'modern',
+            theme: 'theme-material'
+        }),
+        new HtmlWebpackPlugin({
+            template: './index.html',
+            hash: true
+        })
     ],
 
     devServer: {
