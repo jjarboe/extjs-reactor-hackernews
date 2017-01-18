@@ -7,7 +7,7 @@ body {
 .container {
     width: 92%;
     max-width: 720px;
-    positon: relative;
+    position: relative;
     margin: 0 auto;
 }
 
@@ -47,7 +47,7 @@ aside ul li a {
 }
 
 .logo {
-    background: url(/assets/img/logo.png) no-repeat;
+    background: url(../img/logo.png) no-repeat;
     margin: 10px 0;
     padding: 0;
     text-indent: -999px;
@@ -58,14 +58,14 @@ aside ul li a {
 .upvote {
     height: 13px;
     width: 1em;
-    background: url(/assets/img/up.gif) center center no-repeat;
+    background: url(../img/up.gif) center center no-repeat;
     display: inline-block;
     margin: 0;
     padding: 0;
 }
 
 .posts {
-    list-style-image: url(/assets/img/up.gif);
+    list-style-image: url(../img/up.gif);
     margin: 1em 0 3em 0;
     padding-left: 1.5em;
 }
