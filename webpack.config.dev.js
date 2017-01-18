@@ -2,7 +2,7 @@
 
 const path = require('path');
 const webpack = require('webpack');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     devtool: 'cheap-module-eval-source-map',
@@ -13,6 +13,7 @@ module.exports = {
 
     output: {
         path: 'build',
+        publicPath: '/',
         filename: 'index.js'
     },
 
@@ -30,22 +31,22 @@ module.exports = {
             },
             {
                 test: /\.css$/,
-                loader: ExtractTextPlugin.extract('css')
+                loader: 'style!css',
             },
             {
                 test: /\.(ico|jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2)(\?.*)?$/,
                 exclude: /\/favicon.ico$/,
-                include: [path.join(__dirname, 'assets', 'img')],
-                loader: 'file',
-                query: {
-                    name: 'static/media/[name].[hash:8].[ext]'
-                }
+                loader: 'file'
             }
         ]
     },
 
     plugins: [
-        new ExtractTextPlugin('styles.css')
+        new HtmlWebpackPlugin({
+            template: 'index.ejs',
+            inject: 'head',
+            hash: true
+        })
     ],
 
     devServer: {

@@ -11,15 +11,15 @@ var Header = require('./header'),
 App = React.createClass({
     render: function() {
         return <div >
-            <Header / >
-            <div className = "container content" >
-            <Posts / >
+            <Header />
+            <div className="container content" >
+            <Posts />
             </div > </div > ;
     }
 });
 
 App.start = function() {
-    ReactDOM.render( < App / > , document.getElementById('app'));
+    ReactDOM.render( < App /> , document.getElementById('app'));
 };
 
 module.exports = window.App = App;
