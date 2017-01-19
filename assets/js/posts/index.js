@@ -32,18 +32,47 @@ List = React.createClass({
     },
     render: function () {
 console.log('POSTS', this.state.posts);
+/*
         return <ol className="posts">
             {this.state.posts.map(function (post) {
                 return <Item key={post.objectID} post={post}/>
             })}
         </ol>;
-/*
+*/
         return <Grid
+                 columns={[
+                     { text: 'Id', dataIndex: 'objectID', flex: 1 }
+                 ]}
                  store={{
-                     data: [{objectId: 'Loading'}]
+                     fields: ['objectID'],
+                     data: this.state,
+                     proxy: {
+                         type: 'memory',
+                         reader: {
+                             type: 'json',
+                             rootProperty: 'posts'
+                         }
+                     },
+                 }}
+             />;
+/*        return <Grid
+                 store={{
+                     proxy: {
+                         type: 'jsonp',
+                         url:  "https://hn.algolia.com/api/v1/search?tags=front_page&format=json",
+                         limitParam: '',
+                         pageParam: '',
+                         startParam: '',
+                         noCache: false,
+                         reader: {
+                             type: 'json',
+                             rootProperty: 'hits'
+                         }
+                     },
+                     autoLoad: true
                  }}
                  columns={[
-                     { text: 'Id', dataIndex: 'objectId', flex: 1 }
+                     { text: 'Id', dataIndex: 'objectID', flex: 1 }
                  ]}
              />;
 */
