@@ -5,14 +5,26 @@ var React = require('react'),
 
     List;
 
-import {reactify} from '@extjs/reactor/';
+import { reactify } from '@extjs/reactor';
 
 Ext.require("Ext.grid.Grid");
 const Grid = reactify('grid');
 
 List = React.createClass({
     getInitialState: function () {
-        return { posts: [] };
+        return {
+            store: Ext.create('Ext.data.Store', {
+                fields: ['objectID'],
+                data: [],
+                proxy: {
+                    type: 'memory',
+                    reader: {
+                        type: 'json',
+                        rootProperty: 'posts'
+                    }
+                }
+            })
+        };
     },
     componentWillMount: function () {
         this.fetchLatestNews();
@@ -23,7 +35,7 @@ List = React.createClass({
             dataType:  'json',
             data:      { format: 'json' },
             success: function (result) {
-                this.setState({ posts: result.hits });
+                this.state.store.loadData(result.hits);
             }.bind(this),
             error: function () {
                 alert('error getting posts. please try again later');
@@ -31,51 +43,16 @@ List = React.createClass({
         });
     },
     render: function () {
-console.log('POSTS', this.state.posts);
-/*
-        return <ol className="posts">
-            {this.state.posts.map(function (post) {
-                return <Item key={post.objectID} post={post}/>
-            })}
-        </ol>;
-*/
-        return <Grid
+        return (
+            <Grid
                  columns={[
                      { text: 'Id', dataIndex: 'objectID', flex: 1 }
                  ]}
-                 store={{
-                     fields: ['objectID'],
-                     data: this.state,
-                     proxy: {
-                         type: 'memory',
-                         reader: {
-                             type: 'json',
-                             rootProperty: 'posts'
-                         }
-                     },
-                 }}
-             />;
-/*        return <Grid
-                 store={{
-                     proxy: {
-                         type: 'jsonp',
-                         url:  "https://hn.algolia.com/api/v1/search?tags=front_page&format=json",
-                         limitParam: '',
-                         pageParam: '',
-                         startParam: '',
-                         noCache: false,
-                         reader: {
-                             type: 'json',
-                             rootProperty: 'hits'
-                         }
-                     },
-                     autoLoad: true
-                 }}
-                 columns={[
-                     { text: 'Id', dataIndex: 'objectID', flex: 1 }
-                 ]}
-             />;
-*/
+                 height={500}
+                 width="100%"
+                 store={this.state.store}
+             />
+        );
     }
 });
 

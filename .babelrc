@@ -1,5 +1,9 @@
 {
-    "presets": ["es2015", "stage-2", "react"]
-        /*,
-            "plugins": ["@extjs/reactor-babel-plugin"]*/
+    "presets": [
+        "es2015",
+        "react"
+    ],
+    "plugins": [
+        "@extjs/reactor-babel-plugin"
+    ]
 }

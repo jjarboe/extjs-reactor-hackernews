@@ -34,7 +34,8 @@
     "jquery": "^2.1.1",
     "react": "^15.4.2",
     "script-loader": "^0.7.0",
-    "style-loader": "^0.13.1"
+    "style-loader": "^0.13.1",
+    "webpack-dev-server": "^1.16.2"
   },
   "dependencies": {
     "@extjs/reactor": "^0.2.5",
