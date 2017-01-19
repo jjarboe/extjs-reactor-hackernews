@@ -5,10 +5,7 @@ var React = require('react'),
 
     List;
 
-import { reactify } from '@extjs/reactor';
-
-Ext.require("Ext.grid.Grid");
-const Grid = reactify('grid');
+import { Grid } from '@extjs/reactor/modern';
 
 List = React.createClass({
     getInitialState: function () {
