@@ -2,6 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import styles from '../css/styles.css';
 
+import { install } from '@extjs/reactor';
+install();
+
 window.React = React;
 
 var Header = require('./header'),
@@ -19,7 +22,9 @@ App = React.createClass({
 });
 
 App.start = function() {
-    ReactDOM.render( < App /> , document.getElementById('app'));
+    Ext.onReady(function() {
+        ReactDOM.render( <App /> , document.getElementById('app'));
+    })
 };
 
 module.exports = window.App = App;

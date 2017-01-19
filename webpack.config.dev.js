@@ -3,6 +3,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ExtJSReactorWebpackPlugin = require('@extjs/reactor-webpack-plugin');
 
 module.exports = {
     devtool: 'cheap-module-eval-source-map',
@@ -42,6 +43,11 @@ module.exports = {
     },
 
     plugins: [
+        new ExtJSReactorWebpackPlugin({
+            sdk: 'ext', // you need to copy the Ext JS SDK to the root of this package, or you can specify a full path to some other location
+            theme: 'theme-material',
+            packages: ['charts']
+        }),
         new HtmlWebpackPlugin({
             template: 'index.ejs',
             inject: 'head',
