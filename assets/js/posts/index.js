@@ -5,6 +5,11 @@ var React = require('react'),
 
     List;
 
+import {reactify} from '@extjs/reactor/';
+
+Ext.require("Ext.grid.Grid");
+const Grid = reactify('grid');
+
 List = React.createClass({
     getInitialState: function () {
         return { posts: [] };
@@ -26,11 +31,22 @@ List = React.createClass({
         });
     },
     render: function () {
+console.log('POSTS', this.state.posts);
         return <ol className="posts">
             {this.state.posts.map(function (post) {
                 return <Item key={post.objectID} post={post}/>
             })}
         </ol>;
+/*
+        return <Grid
+                 store={{
+                     data: [{objectId: 'Loading'}]
+                 }}
+                 columns={[
+                     { text: 'Id', dataIndex: 'objectId', flex: 1 }
+                 ]}
+             />;
+*/
     }
 });
 

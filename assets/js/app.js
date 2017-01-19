@@ -2,11 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import styles from '../css/styles.css';
 
-/*
-//import Ext from '../../ext/ext-bootstrap.js';
+require('script!../../build/extjs/ext');
 import { install } from '@extjs/reactor';
 install();
-*/
 
 window.React = React;
 
@@ -25,14 +23,9 @@ App = React.createClass({
 });
 
 App.start = function() {
-/*
-    console.log(Ext);
-    Ext.onReady( function() {
-*/
-    ReactDOM.render( <App /> , document.getElementById('app'));
-/*
+    Ext.onReady(function() {
+        ReactDOM.render( <App /> , document.getElementById('app'));
     })
-*/
 };
 
 module.exports = window.App = App;

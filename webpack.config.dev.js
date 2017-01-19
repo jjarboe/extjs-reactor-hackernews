@@ -3,9 +3,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-/*
 const ExtJSReactWebpackPlugin = require('@extjs/reactor-webpack-plugin');
-*/
 
 module.exports = {
     devtool: 'cheap-module-eval-source-map',
@@ -49,14 +47,12 @@ module.exports = {
             template: 'index.ejs',
             inject: 'head',
             hash: true
+        }),
+        new ExtJSReactWebpackPlugin({
+            sdk: 'ext',
+            toolkit: 'modern',
+            theme: 'theme-material'
         })
-        /*,
-               new ExtJSReactWebpackPlugin({
-                   sdk: 'ext',
-                   toolkit: 'modern',
-                   theme: 'theme-material'
-               })
-               */
     ],
 
     devServer: {
