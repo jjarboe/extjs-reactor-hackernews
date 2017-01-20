@@ -11,7 +11,7 @@ List = React.createClass({
     getInitialState: function () {
         return {
             store: Ext.create('Ext.data.Store', {
-                fields: ['title', 'url', 'points'],
+                fields: ['title', 'url', 'points', 'created_at__i', 'num_comments'],
                 data: [],
                 proxy: {
                     type: 'memory',
