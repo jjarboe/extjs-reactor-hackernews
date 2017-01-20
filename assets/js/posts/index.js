@@ -11,7 +11,7 @@ List = React.createClass({
     getInitialState: function () {
         return {
             store: Ext.create('Ext.data.Store', {
-                fields: ['objectID'],
+                fields: ['title', 'url'],
                 data: [],
                 proxy: {
                     type: 'memory',
@@ -43,9 +43,11 @@ List = React.createClass({
         return (
             <Grid
                  columns={[
-                     { text: 'Id', dataIndex: 'objectID', flex: 1 }
+                     { text: 'Title', cell: { encodeHtml: false},
+                        tpl: '<a href="{url}">{title}</a>', flex: 1
+                     }
                  ]}
-                 height={500}
+                 height={ 750 }
                  width="100%"
                  store={this.state.store}
              />
