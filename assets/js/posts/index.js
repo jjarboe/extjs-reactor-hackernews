@@ -11,7 +11,7 @@ List = React.createClass({
     getInitialState: function () {
         return {
             store: Ext.create('Ext.data.Store', {
-                fields: ['title', 'url'],
+                fields: ['title', 'url', 'points'],
                 data: [],
                 proxy: {
                     type: 'memory',
@@ -46,7 +46,8 @@ List = React.createClass({
                      { text: 'Title', cell: { encodeHtml: false},
                         xtype: 'templatecolumn', dataIndex: 'title',
                         tpl: '<a href="{url}">{title}</a>', flex: 1
-                     }
+                     },
+                     { text: 'Points', dataIndex: 'points', xtype: 'numbercolumn' }
                  ]}
                  height={ 750 }
                  width="100%"
