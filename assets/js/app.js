@@ -9,15 +9,22 @@ window.React = React;
 
 var Header = require('./header'),
     Posts = require('./posts'),
+    Frontpage,
     App;
 
-App = React.createClass({
+Frontpage = React.createClass({
     render: function() {
         return <div >
             <Header />
             <div className="container content" >
             <Posts />
             </div > </div > ;
+    }
+});
+
+App = React.createClass({
+    render: function() {
+        return <Frontpage /> ;
     }
 });
 
