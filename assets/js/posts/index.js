@@ -44,6 +44,7 @@ List = React.createClass({
             <Grid
                  columns={[
                      { text: 'Title', cell: { encodeHtml: false},
+                        xtype: 'templatecolumn', dataIndex: 'title',
                         tpl: '<a href="{url}">{title}</a>', flex: 1
                      }
                  ]}
