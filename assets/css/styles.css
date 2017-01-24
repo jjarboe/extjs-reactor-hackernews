@@ -64,6 +64,16 @@ aside ul li a {
     padding: 0;
 }
 
+h1 {
+    font-weight: 900;
+    font-size: 2.5em;
+    text-align: center;
+}
+
+h1.logo {
+    text-align: left;
+}
+
 .posts {
     list-style-image: url(../img/up.gif);
     margin: 1em 0 3em 0;
