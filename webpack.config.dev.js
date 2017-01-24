@@ -8,9 +8,7 @@ const ExtJSReactorWebpackPlugin = require('@extjs/reactor-webpack-plugin');
 module.exports = {
     devtool: 'cheap-module-eval-source-map',
 
-    entry: [
-        path.resolve('assets/js/app')
-    ],
+    entry: path.resolve('assets/js/app'),
 
     output: {
         path: 'build',
@@ -35,7 +33,7 @@ module.exports = {
                 loader: 'style!css',
             },
             {
-                test: /\.(ico|jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2)(\?.*)?$/,
+                test: /\.(ico|jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|json)(\?.*)?$/,
                 exclude: /\/favicon.ico$/,
                 loader: 'file'
             }
@@ -45,9 +43,8 @@ module.exports = {
     plugins: [
         new ExtJSReactorWebpackPlugin({
             sdk: 'ext', // you need to copy the Ext JS SDK to the root of this package, or you can specify a full path to some other location
-            theme: 'theme-material'
-                /*,
-                           packages: ['charts']*/
+            theme: 'theme-material',
+            packages: ['d3']
         }),
         new HtmlWebpackPlugin({
             template: 'index.ejs',
@@ -57,7 +54,7 @@ module.exports = {
     ],
 
     devServer: {
-        contentBase: path.resolve("./build"),
+        contentBase: path.resolve("./"),
         noInfo: true,
         hot: true
     }
