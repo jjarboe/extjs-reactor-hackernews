@@ -2,9 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import styles from '../css/styles.css';
 
-import { reactify, install as extjs_install } from '@extjs/reactor';
+import { install as extjs_install } from '@extjs/reactor';
 
-import { Panel, TabPanel } from '@extjs/reactor/modern';
+import { Panel, TabPanel, D3_Heatmap } from '@extjs/reactor/modern';
 
 extjs_install( { viewport: true } );
 window.React = React;
@@ -16,7 +16,6 @@ var Header = require('./header'),
 
 require('../../ext/packages/d3/production/d3.js');
 
-const D3Heatmap = reactify('d3-heatmap');
 class Heatmap extends React.Component {
     constructor(props) {
         super(props);
@@ -34,7 +33,7 @@ class Heatmap extends React.Component {
     render() {
         return <div>
             <h1>Postings by day and hour</h1>
-            <D3Heatmap
+            <D3_Heatmap
                 height={ 600 }
                 padding={{ top:30, right:30, bottom:50, left:60 }}
                 yAxis={{ title: { text: 'Hour'}, step: 1, field: 'hour' }}
