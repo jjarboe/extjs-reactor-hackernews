@@ -17,6 +17,25 @@ npm install
 At this point, you should have all the necessary packages to start the development server with ```npm start```.
 The website will run on http://localhost:8080.
 
+
+# Interesting tags
+
+There are a few tags that represent interesting points in the project timeline:
+
+* v1.0
+  - The original project, updated to use webpack and such.  No Ext JS yet.
+* v1.1
+  - First step in adoption of Ext JS components.  Feed presented in a single-column grid of hyperlinks.
+* v1.2
+  - Trivial change to add a column (score) to the grid.
+* v2.0
+  - Addition of TabPanel and D3 Heatmap
+
+Each of these checkpoints are runnable, if you checkout the appropriate tag.  Feel free to diff between tags to understand
+code changes to implement specific functionality.
+
+===========
+
 The readme from the original project follows:
 
 ===========
