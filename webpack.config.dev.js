@@ -12,7 +12,7 @@ module.exports = {
     ],
 
     output: {
-        path: 'build',
+        path: path.resolve('build'),
         publicPath: '/',
         filename: 'index.js'
     },
@@ -25,18 +25,18 @@ module.exports = {
     module: {
         loaders: [{
                 test: /\.jsx?$/,
-                loader: "babel",
+                loader: "babel-loader",
                 exclude: /(node_modules|ext|extjs)/,
                 include: [path.join(__dirname, 'assets', 'js')]
             },
             {
                 test: /\.css$/,
-                loader: 'style!css',
+                loader: 'style-loader!css-loader',
             },
             {
                 test: /\.(ico|jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2)(\?.*)?$/,
                 exclude: /\/favicon.ico$/,
-                loader: 'file'
+                loader: 'file-loader'
             }
         ]
     },
