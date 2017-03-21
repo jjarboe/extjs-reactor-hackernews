@@ -30,4 +30,5 @@ tags
 # ignores specific to this repo
 build/
 .sencha/
+ext/
 
