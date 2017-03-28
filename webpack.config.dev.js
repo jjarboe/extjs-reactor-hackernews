@@ -26,7 +26,6 @@ module.exports = {
         loaders: [{
                 test: /\.jsx?$/,
                 loader: "babel-loader",
-                exclude: /(node_modules|ext|extjs)/,
                 include: [path.join(__dirname, 'assets', 'js')]
             },
             {
