@@ -1,5 +1,7 @@
 # Sencha Reactor Demo App
 
+*Note: this project was created to provide an example project prior to release of the ExtReact product.  Unless you are working with a pre-release version of the ExtJS Reactor, you should probably not use this project.*
+
 This project expands on a simple demo app originally hosted at [https://github.com/prabirshrestha/hn-react](https://github.com/prabirshrestha/hn-react).
 
 This project updated the build toolchain to use webpack with babel, and added Ext JS components to improve
